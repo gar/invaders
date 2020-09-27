@@ -14,7 +14,7 @@ module Invaders
       known_invader_patterns = @known_invader_filenames.map do |filename|
         Invaders::ReflectionPattern.new(File.read(filename))
       end
-      results = Invaders::Detector.new(radar_sample_pattern, known_invader_patterns: known_invader_patterns)
+      results = Invaders::Detector.new(radar_sample_pattern, known_invader_patterns: known_invader_patterns).detect
       Invaders::DetectionReport.new(results).print_report
     end
   end

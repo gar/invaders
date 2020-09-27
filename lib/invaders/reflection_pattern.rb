@@ -1,11 +1,21 @@
 module Invaders
   class ReflectionPattern
-    attr_reader :height, :width
+    attr_reader :matrix
 
     def initialize(pattern_string)
-      lines = pattern_string.split("\n")
-      @height = lines.size
-      @width = lines.first.size
+      @matrix = pattern_string.split("\n").map(&:chars)
+    end
+
+    def height
+      @matrix.length
+    end
+    
+    def width
+      @matrix.first.length
+    end
+
+    def area
+      height * width
     end
   end
 end
