@@ -17,4 +17,12 @@ RSpec.describe Invaders::DetectionResult do
 
     expect(result.confidence).to eq(1.0)
   end
+
+  it 'reports the coordinates of the radar pattern' do
+    radar_sample = double('radar pattern', coordinates: [[0, 1], [1, 1]])
+
+    result = Invaders::DetectionResult.new(invader, radar_sample)
+
+    expect(result.coordinates).to eq([[0, 1], [1, 1]])
+  end
 end

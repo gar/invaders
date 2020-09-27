@@ -2,10 +2,10 @@ require_relative '../../lib/invaders/detection_report'
 
 RSpec.describe Invaders::DetectionReport do
   let(:results) {
-    [ double('likely result', confidence: 0.9),
-      double('another likely result', confidence: 0.9),
-      double('possible result', confidence: 0.5),
-      double('unlikely result', confidence: 0.1) ]
+    [ double('likely result', coordinates: [], confidence: 0.9),
+      double('another likely result', coordinates: [], confidence: 0.9),
+      double('possible result', coordinates: [], confidence: 0.5),
+      double('unlikely result', coordinates: [], confidence: 0.1) ]
   }
 
   it 'only reports results of 0.8 confidence and above by default' do

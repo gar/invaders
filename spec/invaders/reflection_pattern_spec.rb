@@ -29,4 +29,8 @@ RSpec.describe Invaders::ReflectionPattern do
   it 'reports the number of cells it contains as its area' do
     expect(ufo_pattern.area).to eq(18)
   end
+
+  it 'optional stores its coordinates which it can later return' do
+    Invaders::ReflectionPattern.new('o', [[1, 3], [3, 3]])
+  end
 end

@@ -20,5 +20,10 @@ RSpec.describe Invaders::Detector do
     it 'has one result that contains the ufo' do
       positive_results = results.count { |r| r.confidence == 1.0 }
     end
+
+    it 'the positive result reveals the coordinates of the ufo' do
+      positive_result = results.find { |r| r.confidence == 1.0 }
+      expect(positive_result.coordinates).to eq([[1, 0], [1,0]])
+    end
   end
 end

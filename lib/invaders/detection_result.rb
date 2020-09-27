@@ -10,5 +10,9 @@ module Invaders
     def confidence
       Invaders::SimularityDetector.new(@invader_pattern, @radar_pattern).simularity
     end
+
+    def coordinates
+      @radar_pattern.coordinates
+    end
   end
 end

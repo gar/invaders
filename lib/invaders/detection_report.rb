@@ -8,7 +8,7 @@ module Invaders
 
     def print_report
       likely_positive_results.each do |res|
-        @out.puts "Possible invader detected! (Confidence #{res.confidence.round(2)})"
+        @out.puts "Possible invader detected at #{res.coordinates.inspect}! (Confidence #{res.confidence.round(2)})"
       end
     end
 

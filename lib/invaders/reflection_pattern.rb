@@ -1,9 +1,10 @@
 module Invaders
   class ReflectionPattern
-    attr_reader :matrix
+    attr_reader :matrix, :coordinates
 
-    def initialize(pattern_string)
+    def initialize(pattern_string, coordinates=nil)
       @matrix = pattern_string.split("\n").map(&:chars)
+      @coordinates = coordinates
     end
 
     def height
